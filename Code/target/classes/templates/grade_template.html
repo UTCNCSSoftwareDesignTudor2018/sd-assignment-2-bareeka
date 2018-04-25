@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table  border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Course</th>
+        <th>Student</th>
+        <th>Date</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="enrollment : ${ enrollmentList }">
+        <td th:text="${enrollment.enrollmentid }">ID</td>
+        <td th:text="${enrollment.course.name }">NAME</td>
+        <td th:text="${enrollment.student.name}">STUDENT</td>
+        <td th:text="${enrollment.enrollmentDate }">Date</td>
+        <td th:text="${enrollment.grade }">Date</td>
+    </tr>
+    </tbody>
+</table>
+
+<form    method="post">
+    <div class="col-sm-12">
+        <label>Enrollment:</label>
+        <input placeholder="Enter Enrollment Id" name="inId"/>
+        <label>Grade:</label>
+        <input placeholder="Enter Grade" name="inGrade"/>
+    </div>
+    <button type="submit" class = "btn btn-primary">Update</button>
+</form>
+
+</body>
+
+</body>
+</html>
