@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table  border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>CNP</th>
+        <th>Group</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${ studentList }">
+        <td th:text="${student.studentid }">ID</td>
+        <td th:text="${student.name }">Name</td>
+        <td th:text="${student.address}">Address</td>
+        <td th:text="${student.cnp }">CNP</td>
+        <td th:text="${student.group }">Group</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<form  method="post">
+    <div class="col-sm-12">
+        <label>Enrollment:</label>
+        <input placeholder="Enter Student Id" name="inId"/>
+    </div>
+    <button type="submit" class = "btn btn-primary">Generate Report</button>
+</form>
+
+</body>
+</html>

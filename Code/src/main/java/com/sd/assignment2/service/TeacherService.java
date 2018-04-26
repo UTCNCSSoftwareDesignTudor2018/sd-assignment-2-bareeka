@@ -17,11 +17,11 @@ public class TeacherService {
         return teacherRepo.save(t);
     }
 
-    public Teacher getById(Integer id){
+    public Teacher findById(Integer id){
         return teacherRepo.getOne(id);
     }
 
-    public List<Teacher> getAll(){
+    public List<Teacher> findAll(){
         return teacherRepo.findAll();
     }
 }

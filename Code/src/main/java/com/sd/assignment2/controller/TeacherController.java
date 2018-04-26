@@ -1,8 +1,11 @@
 package com.sd.assignment2.controller;
 
 import com.sd.assignment2.persistence.entity.Enrollment;
+import com.sd.assignment2.persistence.entity.Student;
 import com.sd.assignment2.persistence.entity.Teacher;
+import com.sd.assignment2.persistence.report.Report;
 import com.sd.assignment2.service.EnrollmentService;
+import com.sd.assignment2.service.StudentService;
 import com.sd.assignment2.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +20,8 @@ public class TeacherController {
     TeacherService teacherService;
     @Autowired
     EnrollmentService enrollmentService;
+    @Autowired
+    StudentService studentService;
 
     @RequestMapping(value = "/teacher{id}", method = RequestMethod.POST)
     public ModelAndView updateTeacher(@ModelAttribute(value = "uTeacher") Teacher uTeacher , @PathVariable String id)
@@ -32,7 +37,7 @@ public class TeacherController {
     @RequestMapping(value = "/teacher{id}",method = RequestMethod.GET)
     public ModelAndView viewTeacher(@PathVariable String id)
     {
-        Teacher t = teacherService.getById(Integer.parseInt(id));
+        Teacher t = teacherService.findById(Integer.parseInt(id));
 
         ModelAndView mav = new ModelAndView("teacher_template");
         List<Enrollment> enrollmentList = enrollmentService.findAll();
@@ -45,7 +50,7 @@ public class TeacherController {
     @RequestMapping(value = "/teacher{id}/grade", method = RequestMethod.GET)
     public ModelAndView viewGrades(@PathVariable String id)
     {
-       // Teacher t = teacherService.getById(Integer.parseInt(id));
+       // Teacher t = teacherService.findById(Integer.parseInt(id));
 
         ModelAndView mav = new ModelAndView("grade_template");
         List<Enrollment> enrollmentList = enrollmentService.findAll();
@@ -63,6 +68,29 @@ public class TeacherController {
         return new ModelAndView("redirect:/teacher{id}/grade");
 
     }
+
+    @RequestMapping(value = "/teacher{id}/report", method = RequestMethod.GET)
+    public ModelAndView viewStudents(@PathVariable String id)
+    {
+
+        ModelAndView mav = new ModelAndView("report_template");
+        List<Student> studentList = studentService.getAllStudents();
+        //mav.addObject("teacher", t);
+        mav.addObject("studentList",studentList);
+        return mav;
+    }
+
+    @RequestMapping(value = "/teacher{id}/report", method = RequestMethod.POST)
+    public ModelAndView makeReport(@PathVariable String id, @ModelAttribute(value = "inId") Integer inId)
+    {
+        Report report = new Report("enrollmentReport");
+        Teacher t = teacherService.findById(Integer.parseInt(id));
+        enrollmentService.makeReport(t,report, studentService.findById(inId));
+        return new ModelAndView("redirect:/teacher{id}/report");
+
+    }
+
+
 
 
 

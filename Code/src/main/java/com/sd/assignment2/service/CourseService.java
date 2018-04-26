@@ -17,7 +17,7 @@ public class CourseService {
         return courseRepo.getOne(id);
     }
 
-    public List<Course> getAllCourses(){
+    public List<Course> findAll(){
         return courseRepo.findAll();
     }
 

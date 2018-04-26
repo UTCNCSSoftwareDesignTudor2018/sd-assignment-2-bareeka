@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="222.0">com.sd.assignment2.service.StudentService</node>
+    <node x="0.0" y="370.0">com.sd.assignment2.persistence.entity.Teacher</node>
+    <node x="269.0" y="370.0">com.sd.assignment2.persistence.entity.Course</node>
+    <node x="187.0" y="74.0">com.sd.assignment2.controller.CourseController</node>
+    <node x="0.0" y="74.0">com.sd.assignment2.controller.StudentController</node>
+    <node x="178.0" y="148.0">com.sd.assignment2.service.TeacherService</node>
+    <node x="0.0" y="296.0">com.sd.assignment2.persistence.repository.StudentRepo</node>
+    <node x="338.0" y="222.0">com.sd.assignment2.persistence.repository.TeacherRepo</node>
+    <node x="171.0" y="222.0">com.sd.assignment2.service.CourseService</node>
+    <node x="135.0" y="370.0">com.sd.assignment2.persistence.entity.Student</node>
+    <node x="0.0" y="0.0">com.sd.assignment2.service.EnrollmentService</node>
+    <node x="188.0" y="0.0">com.sd.assignment2.controller.TeacherController</node>
+    <node x="0.0" y="148.0">com.sd.assignment2.persistence.repository.EnrollmentRepo</node>
+    <node x="161.0" y="296.0">com.sd.assignment2.persistence.repository.CourseRepo</node>
+    <node x="318.0" y="296.0">com.sd.assignment2.persistence.entity.Enrollment</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.9" x="591.8888888888888" y="313.3333333333333" />
+  <SelectedNodes>
+    <node>com.sd.assignment2.service.StudentService</node>
+    <node>com.sd.assignment2.persistence.entity.Teacher</node>
+    <node>com.sd.assignment2.persistence.entity.Course</node>
+    <node>com.sd.assignment2.controller.CourseController</node>
+    <node>com.sd.assignment2.controller.StudentController</node>
+    <node>com.sd.assignment2.service.TeacherService</node>
+    <node>com.sd.assignment2.persistence.repository.StudentRepo</node>
+    <node>com.sd.assignment2.persistence.repository.TeacherRepo</node>
+    <node>com.sd.assignment2.service.CourseService</node>
+    <node>com.sd.assignment2.persistence.entity.Student</node>
+    <node>com.sd.assignment2.service.EnrollmentService</node>
+    <node>com.sd.assignment2.controller.TeacherController</node>
+    <node>com.sd.assignment2.persistence.repository.EnrollmentRepo</node>
+    <node>com.sd.assignment2.persistence.repository.CourseRepo</node>
+    <node>com.sd.assignment2.persistence.entity.Enrollment</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

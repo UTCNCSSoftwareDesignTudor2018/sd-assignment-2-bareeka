@@ -6,7 +6,6 @@ import com.sd.assignment2.service.CourseService;
 import com.sd.assignment2.service.EnrollmentService;
 import com.sd.assignment2.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,7 +24,7 @@ public class CourseController {
     @RequestMapping(value = "/student{id}/enrollment",method = RequestMethod.GET)
     public ModelAndView viewCourses(@PathVariable String id)
     {
-        List<Course> courseList = courseService.getAllCourses();
+        List<Course> courseList = courseService.findAll();
         List<Enrollment> enrollmentList = enrollmentService.findAllByStudent(studentService.findById(Integer.parseInt(id)));
 
         ModelAndView mav = new ModelAndView("course_template");
